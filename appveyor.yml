@@ -1,0 +1,14 @@
+version: 1.0.{build}
+image: Visual Studio 2015
+build_script:
+  - cmd: PowerShell -Version 2.0 .\build.ps1
+test: off
+artifacts:
+  - path: artifacts/nuget/*.nupkg
+deploy:
+  provider: NuGet
+  on:
+    branch: master
+  server:
+  api_key: $(NUGET_API_KEY)
+  skip_symbols: true
