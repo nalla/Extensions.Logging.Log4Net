@@ -19,9 +19,9 @@ namespace Extensions.Logging.Log4Net
 		/// <summary>
 		///     Initializes a new instance of the <see cref="Log4NetProvider" /> class.
 		/// </summary>
-		public Log4NetProvider()
+		public Log4NetProvider(string repositoryName)
 		{
-			loggerRepository = LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(Hierarchy));
+			loggerRepository = LogManager.CreateRepository(repositoryName, typeof(Hierarchy));
 		}
 
 		/// <inheritdoc />
