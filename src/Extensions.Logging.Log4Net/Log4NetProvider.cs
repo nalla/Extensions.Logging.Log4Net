@@ -22,6 +22,7 @@ namespace Extensions.Logging.Log4Net
 		public Log4NetProvider(string repositoryName)
 		{
 			loggerRepository = LogManager.CreateRepository(repositoryName, typeof(Hierarchy));
+			log4net.Config.XmlConfigurator.Configure(loggerRepository);
 		}
 
 		/// <inheritdoc />
